@@ -1,0 +1,135 @@
+Record Starts at UTC 04/10/2019 15:51:31:
+
+Run the job:"/dll "LanguageWorker, Version=6.0.0.0, Culture=neutral, PublicKeyToken=69c3241e6f0468ca;Microsoft.MetaAnalytics.LanguageWorker.LanguageWorkerClientRS;RunRSNR" /Output0 "..\..\Result Dataset\Result Dataset.dataset" /Output1 "..\..\R Device\R Device.dataset"    /bundlePath "..\..\Script Bundle\Script Bundle.zip"  /rStreamReader "script.R"  /rLibVersion "CRAN R 3.1.0"  /ContextFile "..\..\_context\ContextFile.txt""
+[Start] Program::Main
+[Start]     DataLabModuleDescriptionParser::ParseModuleDescriptionString
+[Stop]     DataLabModuleDescriptionParser::ParseModuleDescriptionString. Duration = 00:00:00.0027965
+[Start]     DllModuleMethod::DllModuleMethod
+[Stop]     DllModuleMethod::DllModuleMethod. Duration = 00:00:00.0000386
+[Start]     DllModuleMethod::Execute
+[Start]         DataLabModuleBinder::BindModuleMethod
+[Verbose]             moduleMethodDescription LanguageWorker, Version=6.0.0.0, Culture=neutral, PublicKeyToken=69c3241e6f0468ca;Microsoft.MetaAnalytics.LanguageWorker.LanguageWorkerClientRS;RunRSNR
+[Verbose]             assemblyFullName LanguageWorker, Version=6.0.0.0, Culture=neutral, PublicKeyToken=69c3241e6f0468ca
+[Start]             DataLabModuleBinder::LoadModuleAssembly
+[Verbose]                 Loaded moduleAssembly LanguageWorker, Version=6.0.0.0, Culture=neutral, PublicKeyToken=69c3241e6f0468ca
+[Stop]             DataLabModuleBinder::LoadModuleAssembly. Duration = 00:00:00.0077856
+[Verbose]             moduleTypeName Microsoft.MetaAnalytics.LanguageWorker.LanguageWorkerClientRS
+[Verbose]             moduleMethodName RunRSNR
+[Information]             Module FriendlyName : Execute R Script
+[Information]             Module Release Status : Release
+[Stop]         DataLabModuleBinder::BindModuleMethod. Duration = 00:00:00.0095272
+[Start]         ParameterArgumentBinder::InitializeParameterValues
+[Verbose]             parameterInfos count = 6
+[Verbose]             parameterInfos[0] name = dataset1 , type = Microsoft.Numerics.Data.Local.DataTable
+[Verbose]             Set optional parameter dataset1 value to NULL
+[Verbose]             parameterInfos[1] name = dataset2 , type = Microsoft.Numerics.Data.Local.DataTable
+[Verbose]             Set optional parameter dataset2 value to NULL
+[Verbose]             parameterInfos[2] name = bundlePath , type = System.String
+[Verbose]             parameterInfos[3] name = rStreamReader , type = System.IO.StreamReader
+[Verbose]             parameterInfos[4] name = seed , type = System.Nullable`1[System.Int32]
+[Verbose]             Set optional parameter seed value to NULL
+[Verbose]             parameterInfos[5] name = rLibVersion , type = Microsoft.MetaAnalytics.LanguageWorker.LanguageWorkerClientRS+ExecuteRScriptRVersion
+[Verbose]             Converted string 'CRAN R 3.1.0' to enum of type Microsoft.MetaAnalytics.LanguageWorker.LanguageWorkerClientRS+ExecuteRScriptRVersion
+[Stop]         ParameterArgumentBinder::InitializeParameterValues. Duration = 00:00:00.0187038
+[Verbose]         Begin invoking method RunRSNR ... 
+[ModuleOutput] Executing Against R 3.1.0.5
+[ModuleOutput] Executing Against R 3.1.0.5
+[ModuleOutput] Begin R Execution: 4/10/2019 3:51:32 PM
+[ModuleOutput] Microsoft Drawbridge Console Host [Version 10.0.10011.20047]
+[ModuleOutput] [1] 56000
+[ModuleOutput] 
+[ModuleOutput] The following files have been unzipped for sourcing in path=["src"]:
+[ModuleOutput] 
+[ModuleOutput]                     Name   Length                Date
+[ModuleOutput] 
+[ModuleOutput] 1    backports_1.1.3.zip    65892 2019-04-10 20:43:00
+[ModuleOutput] 
+[ModuleOutput] 2        BBmisc_1.11.zip   320405 2019-04-10 20:42:00
+[ModuleOutput] 
+[ModuleOutput] 3    checkmate_1.9.1.zip   735298 2019-04-10 20:45:00
+[ModuleOutput] 
+[ModuleOutput] 4  data.table_1.12.2.zip  1938982 2019-04-10 20:46:00
+[ModuleOutput] 
+[ModuleOutput] 5      ggplot2_3.1.1.zip  3621733 2019-04-10 20:43:00
+[ModuleOutput] 
+[ModuleOutput] 6           mlr_2.13.zip  4689279 2019-04-09 13:45:00
+[ModuleOutput] 
+[ModuleOutput] 7    parallelMap_1.3.zip    90128 2019-04-10 20:49:00
+[ModuleOutput] 
+[ModuleOutput] 8  ParamHelpers_1.12.zip   434425 2019-04-10 20:42:00
+[ModuleOutput] 
+[ModuleOutput] 9      stats19_0.2.1.zip  1785334 2019-04-10 20:44:00
+[ModuleOutput] 
+[ModuleOutput] 10     stringi_1.4.3.zip 15289558 2019-04-10 20:45:00
+[ModuleOutput] 
+[ModuleOutput] 11 survival_2.44-1.1.zip  5103211 2019-04-10 20:50:00
+[ModuleOutput] 
+[ModuleOutput] 12     XML_3.98-1.19.zip  4600600 2019-04-10 20:51:00
+[ModuleOutput] 
+[ModuleOutput] Loading objects:
+[ModuleOutput] 
+[ModuleOutput] package 'XML' successfully unpacked and MD5 sums checked
+[ModuleOutput] 
+[ModuleOutput] package 'survival' successfully unpacked and MD5 sums checked
+[ModuleOutput] 
+[ModuleOutput] package 'parallelMap' successfully unpacked and MD5 sums checked
+[ModuleOutput] 
+[ModuleOutput] package 'data.table' successfully unpacked and MD5 sums checked
+[ModuleOutput] 
+[ModuleOutput] package 'checkmate' successfully unpacked and MD5 sums checked
+[ModuleOutput] 
+[ModuleOutput] package 'stringi' successfully unpacked and MD5 sums checked
+[ModuleOutput] 
+[ModuleOutput] package 'stats19' successfully unpacked and MD5 sums checked
+[ModuleOutput] 
+[ModuleOutput] package 'ggplot2' successfully unpacked and MD5 sums checked
+[ModuleOutput] 
+[ModuleOutput] package 'backports' successfully unpacked and MD5 sums checked
+[ModuleOutput] 
+[ModuleOutput] package 'BBmisc' successfully unpacked and MD5 sums checked
+[ModuleOutput] 
+[ModuleOutput] package 'ParamHelpers' successfully unpacked and MD5 sums checked
+[ModuleOutput] 
+[ModuleOutput] package 'mlr' successfully unpacked and MD5 sums checked
+[ModuleOutput] 
+[ModuleOutput] End R Execution: 4/10/2019 3:51:55 PM
+[ModuleOutput] Begin Deserialization: 4/10/2019 3:51:55 PM
+[ModuleOutput] End Deserialization: 4/10/2019 3:51:55 PM
+[Verbose]         End invoking method RunRSNR
+[Start]         DataLabOutputManager::ManageModuleReturnValue
+[Verbose]             moduleReturnType = System.Tuple`2[T1,T2]
+[Start]             DataLabOutputManager::ConvertTupleOutputToFiles
+[Verbose]                 tupleType = System.Tuple`2[Microsoft.Numerics.Data.Local.DataTable,Microsoft.Numerics.Data.Local.DataTable]
+[Verbose]                 outputName Output0
+[Start]                 DataTableDatasetHandler::HandleOutput
+[Start]                     SidecarFiles::CreateVisualizationFiles
+[Information]                         Creating Result Dataset.visualization with key visualization...
+[Stop]                     SidecarFiles::CreateVisualizationFiles. Duration = 00:00:00.1070204
+[Start]                     SidecarFiles::CreateDatatableSchemaFile
+[Information]                         SidecarFiles::CreateDatatableSchemaFile creating "..\..\Result Dataset\Result Dataset.schema"
+[Stop]                     SidecarFiles::CreateDatatableSchemaFile. Duration = 00:00:00.0894684
+[Start]                     SidecarFiles::CreateMetadataFile
+[Information]                         SidecarFiles::CreateMetadataFile creating "..\..\Result Dataset\Result Dataset.metadata"
+[Stop]                     SidecarFiles::CreateMetadataFile. Duration = 00:00:00.0062059
+[Stop]                 DataTableDatasetHandler::HandleOutput. Duration = 00:00:00.2953851
+[Verbose]                 outputName Output1
+[Start]                 DataTableDatasetHandler::HandleOutput
+[Start]                     SidecarFiles::CreateVisualizationFiles
+[Information]                         Creating R Device.visualization with key visualization...
+[Stop]                     SidecarFiles::CreateVisualizationFiles. Duration = 00:00:00.0076112
+[Start]                     SidecarFiles::CreateDatatableSchemaFile
+[Information]                         SidecarFiles::CreateDatatableSchemaFile creating "..\..\R Device\R Device.schema"
+[Stop]                     SidecarFiles::CreateDatatableSchemaFile. Duration = 00:00:00.0254019
+[Start]                     SidecarFiles::CreateMetadataFile
+[Information]                         SidecarFiles::CreateMetadataFile creating "..\..\R Device\R Device.metadata"
+[Stop]                     SidecarFiles::CreateMetadataFile. Duration = 00:00:00.0009926
+[Stop]                 DataTableDatasetHandler::HandleOutput. Duration = 00:00:00.1214954
+[Stop]             DataLabOutputManager::ConvertTupleOutputToFiles. Duration = 00:00:00.4303341
+[Stop]         DataLabOutputManager::ManageModuleReturnValue. Duration = 00:00:00.4319210
+[Verbose]         {"InputParameters":{"Generic":{"bundlePath":"..\\..\\Script Bundle\\Script Bundle.zip","rLibVersion":"R310"},"Unknown":["Key: rStreamReader, ValueType : System.IO.StreamReader"]},"OutputParameters":[{"Rows":0,"Columns":0,"estimatedSize":0,"ColumnTypes":{},"IsComplete":true,"Statistics":{}},{"Rows":1,"Columns":1,"estimatedSize":0,"ColumnTypes":{"System.String":1},"IsComplete":true,"Statistics":{"0":[1,0]}}],"ModuleType":"LanguageWorker","ModuleVersion":" Version=6.0.0.0","AdditionalModuleInfo":"LanguageWorker, Version=6.0.0.0, Culture=neutral, PublicKeyToken=69c3241e6f0468ca;Microsoft.MetaAnalytics.LanguageWorker.LanguageWorkerClientRS;RunRSNR","Errors":"","Warnings":[],"Duration":"00:00:23.6304979"}
+[Stop]     DllModuleMethod::Execute. Duration = 00:00:23.6727755
+[Stop] Program::Main. Duration = 00:00:23.8335760
+Module finished after a runtime of 00:00:23.9060245 with exit code 0
+
+Record Ends at UTC 04/10/2019 15:51:56.
+

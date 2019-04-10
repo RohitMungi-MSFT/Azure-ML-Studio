@@ -1,0 +1,69 @@
+Since the user was facing issue in importing the R modules required, It looked like the packages were not correctly zipped when used as a dataset. The following link explains how we can upload zip files as a dataset and use them in "Execute R Script" module.
+
+https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/execute-r-script#bkmk_AddingANewPackage
+
+The zip package used for this solution is also in the Packages folder. Once the package is uploaded use the following script in "Execute R Module"
+
+# Map 1-based optional input ports to variables
+#dataset1 <- maml.mapInputPort(1) # class: data.frame
+#dataset2 <- maml.mapInputPort(2) # class: data.frame
+
+# Contents of optional Zip port are in ./src/
+# source("src/yourfile.R");
+# load("src/yourData.rdata");
+
+install.packages("src/XML_3.98-1.19.zip",lib=".",repos=NULL, verbose = TRUE)
+install.packages("src/survival_2.44-1.1.zip",lib=".",repos=NULL, verbose = TRUE)
+install.packages("src/parallelMap_1.3.zip",lib=".",repos=NULL, verbose = TRUE)
+install.packages("src/data.table_1.12.2.zip",lib=".",repos=NULL, verbose = TRUE)
+install.packages("src/checkmate_1.9.1.zip",lib=".",repos=NULL, verbose = TRUE)
+install.packages("src/stringi_1.4.3.zip",lib=".",repos=NULL, verbose = TRUE)
+install.packages("src/stats19_0.2.1.zip",lib=".",repos=NULL, verbose = TRUE)
+install.packages("src/ggplot2_3.1.1.zip",lib=".",repos=NULL, verbose = TRUE)
+install.packages("src/backports_1.1.3.zip",lib=".",repos=NULL, verbose = TRUE)
+install.packages("src/BBmisc_1.11.zip",lib=".",repos=NULL, verbose = TRUE)
+install.packages("src/ParamHelpers_1.12.zip",lib=".",repos=NULL, verbose = TRUE)
+install.packages("src/mlr_2.13.zip",lib=".",repos=NULL, verbose = TRUE)
+
+library(XML,lib.loc=".", verbose=TRUE)
+library(survival,lib.loc=".", verbose=TRUE)
+library(parallelMap,lib.loc=".", verbose=TRUE)
+library(data.table,lib.loc=".", verbose=TRUE)
+library(checkmate,lib.loc=".", verbose=TRUE)
+library(stringi,lib.loc=".", verbose=TRUE)
+library(stats19,lib.loc=".", verbose=TRUE)
+library(ggplot2,lib.loc=".", verbose=TRUE)
+library(backports,lib.loc=".", verbose=TRUE)
+library(BBmisc,lib.loc=".", verbose=TRUE)
+library(ParamHelpers,lib.loc=".", verbose=TRUE)
+library(mlr,lib.loc=".", verbose=TRUE)
+
+
+#User Code that was failing since import of modules failed for user
+rf.inputdata <- as.data.frame(subset(Train_Data,select=-c(Target)))
+
+rf.PredictT <- function(inputdata){
+  predict(rf_mod,newdata=inputdata)
+}
+
+library(AzureML)
+library(devtools)
+
+#workspace
+rf.ws <- workspace(
+  id = "<your_workspace_id_from_azure_portal>",
+  auth = "<your_auth_token_from_ML_studio_settings>",
+  api_endpoint = "https://studioapi.azureml.net"
+)
+
+rf.TWebService <- publishWebService(rf.ws,
+                                    fun=rf.PredictT,
+                                    name="rf_mod",
+                                    inputSchema = rf.inputdata)
+
+
+The code that user faced an issue is also shown in this script to indicate the execute R module ran successfully after importing the MLR package. The log of the run and screen shot of the run from Studio is also in this folder.
+
+If you need to download more R packages use the link below:
+
+https://cran.r-project.org/web/packages/available_packages_by_date.html

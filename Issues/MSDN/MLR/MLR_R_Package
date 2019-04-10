@@ -1,0 +1,13 @@
+The following is the URL of the issue raised by a user in MSDN
+
+https://social.msdn.microsoft.com/Forums/en-US/8ffcb4b1-beed-4ef1-8452-03513d8b49c5/whether-quotmlrquot-r-package-is-supported-in-azureml?forum=AzureMachineLearningService
+
+Errors seen by user
+
+Execute R Script Piped (RPackage) : The following error occurred during evaluation of R script: R_tryEval: return error: Error in UseMethod("predict") : no applicable method for 'predict' applied to an object of class "c('randomForest.formula', 'randomForest')"
+
+Execute R Script Piped (RPackage) : The following error occurred during evaluation of R script: R_tryEval: return error: Error in UseMethod("predict") : no applicable method for 'predict' applied to an object of class "c('FilterModel', 'BaseWrapperModel', 'WrappedModel')"
+
+
+According to the issue the user faced errors while installing MLR package in studio in module "Execute R Script"
+
